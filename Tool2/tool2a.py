@@ -5,7 +5,6 @@ class Cryptographer:
 
         with open(file, "r") as clientFile:
             lines = clientFile.readlines()
-            print(lines)
             for line in lines:
                 NL = ""
                 for l in range(0, len(line)):
@@ -16,18 +15,15 @@ class Cryptographer:
 
                     if y == False:
                         ascIINo = ord(letter)
-                        #print(letter)
                         ascIIEn = ascIINo + 2
                         decrLet = chr(ascIIEn)
-                        #print(decrLet)
                         NL += decrLet
                     elif y == True:
                         if line[l:l+2] == "\n":
                             NL += "\n"
-                #print(NL)
+                            
                 text.append(NL)
 
-        print(text)
 
         with open(file, "w") as clientFile:
             for line in text:
@@ -50,18 +46,14 @@ class Cryptographer:
 
                     if y == False:
                         ascIINo = ord(letter)
-                        #print(letter)
                         ascIIEn = ascIINo - 2
                         decrLet = chr(ascIIEn)
-                        #print(decrLet)
                         NL += decrLet
                     elif y == True:
                         if line[l:l+2] == "\n":
                             NL += "\n"
-                #print(NL)
                 text.append(NL)
 
-        print(text)
 
         with open(file, "w") as clientFile:
             for line in text:
